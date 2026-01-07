@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumShift Labs | Quantum Computing Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+    <!-- Quantum Particle Background -->
+    <div id="quantum-particles"></div>
+    
+    <!-- Quantum Wave Animation -->
+    <div class="quantum-waves"></div>
+    
+    <!-- Navigation -->
+    <nav class="quantum-nav">
+        <div class="container">
+            <a href="#" class="quantum-logo">
+                <div class="logo-icon">⚛</div>
+                <div class="logo-text">
+                    <span class="logo-primary">QUANTUM</span>
+                    <span class="logo-accent">SHIFT</span>
+                </div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#quantum" class="nav-link active">
+                    <span class="link-dot"></span>
+                    <span class="link-text">Quantum Lab</span>
+                </a>
+                <a href="#simulator" class="nav-link">
+                    <span class="link-dot"></span>
+                    <span class="link-text">Simulator</span>
+                </a>
+                <a href="#algorithms" class="nav-link">
+                    <span class="link-dot"></span>
+                    <span class="link-text">Algorithms</span>
+                </a>
+                <a href="#learn" class="nav-link">
+                    <span class="link-dot"></span>
+                    <span class="link-text">Learn</span>
+                </a>
+                <a href="#enterprise" class="nav-link">
+                    <span class="link-dot"></span>
+                    <span class="link-text">Enterprise</span>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn-quantum">
+                    <i class="fas fa-atom"></i>
+                    <span>Launch Lab</span>
+                </button>
+                <div class="quantum-toggle">
+                    <input type="checkbox" id="darkModeToggle" checked>
+                    <label for="darkModeToggle">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="quantum-menu">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="quantum-hero" id="quantum">
+        <div class="container">
+            <div class="hero-content">
+                <div class="quantum-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Quantum Ready</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Experience</span>
+                    <span class="title-line">
+                        <span class="text-gradient">Quantum</span>
+                        <span class="title-cursor">|</span>
+                    </span>
+                    <span class="title-line">Computing</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Simulate quantum circuits, develop quantum algorithms, and explore the future of computation on our cloud-based quantum platform.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value" data-count="1024">0</div>
+                        <div class="stat-label">Qubits Simulated</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" data-count="99.9">0</div>
+                        <div class="stat-label">% Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" data-count="50">0</div>
+                        <div class="stat-label">+ Algorithms</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary quantum-pulse">
+                        <i class="fas fa-play"></i>
+                        <span>Start Simulation</span>
+                    </button>
+                    <button class="btn-outline">
+                        <i class="fas fa-book"></i>
+                        <span>View Documentation</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visualization">
+                <div class="quantum-sphere" id="quantumSphere">
+                    <!-- 3D Sphere will be inserted here -->
+                </div>
+                <div class="circuit-visualizer">
+                    <div class="circuit-line"></div>
+                    <div class="circuit-node pulse">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="circuit-line"></div>
+                    <div class="circuit-node pulse delay-1">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="circuit-line"></div>
+                    <div class="circuit-node pulse delay-2">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="circuit-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Simulator -->
+    <section class="quantum-simulator" id="simulator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-accent">Quantum</span> Simulator
+                </h2>
+                <p class="section-subtitle">Build and test quantum circuits in real-time</p>
+            </div>
+            
+            <div class="simulator-container">
+                <div class="simulator-sidebar">
+                    <div class="gate-palette">
+                        <h3>Quantum Gates</h3>
+                        <div class="gate-list">
+                            <div class="gate-item" data-gate="h">
+                                <div class="gate-icon">H</div>
+                                <span>Hadamard</span>
+                            </div>
+                            <div class="gate-item" data-gate="x">
+                                <div class="gate-icon">X</div>
+                                <span>Pauli-X</span>
+                            </div>
+                            <div class="gate-item" data-gate="y">
+                                <div class="gate-icon">Y</div>
+                                <span>Pauli-Y</span>
+                            </div>
+                            <div class="gate-item" data-gate="z">
+                                <div class="gate-icon">Z</div>
+                                <span>Pauli-Z</span>
+                            </div>
+                            <div class="gate-item" data-gate="cnot">
+                                <div class="gate-icon">⊕</div>
+                                <span>CNOT</span>
+                            </div>
+                            <div class="gate-item" data-gate="swap">
+                                <div class="gate-icon">↔</div>
+                                <span>SWAP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="simulator-controls">
+                        <button class="control-btn" id="runCircuit">
+                            <i class="fas fa-play"></i>
+                            Run Circuit
+                        </button>
+                        <button class="control-btn secondary" id="clearCircuit">
+                            <i class="fas fa-trash"></i>
+                            Clear
+                        </button>
+                        <button class="control-btn secondary" id="saveCircuit">
+                            <i class="fas fa-save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="simulator-canvas">
+                    <div class="circuit-board">
+                        <div class="qubit-line" data-qubit="0">
+                            <span class="qubit-label">|0⟩</span>
+                            <div class="gate-slots"></div>
+                        </div>
+                        <div class="qubit-line" data-qubit="1">
+                            <span class="qubit-label">|1⟩</span>
+                            <div class="gate-slots"></div>
+                        </div>
+                        <div class="qubit-line" data-qubit="2">
+                            <span class="qubit-label">|2⟩</span>
+                            <div class="gate-slots"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="simulator-output">
+                        <h4>Measurement Results</h4>
+                        <div class="output-visualization">
+                            <div class="probability-bars">
+                                <div class="prob-bar" data-state="000" style="height: 25%">
+                                    <span class="prob-value">25%</span>
+                                    <span class="prob-state">|000⟩</span>
+                                </div>
+                                <div class="prob-bar" data-state="001" style="height: 15%">
+                                    <span class="prob-value">15%</span>
+                                    <span class="prob-state">|001⟩</span>
+                                </div>
+                                <div class="prob-bar" data-state="010" style="height: 35%">
+                                    <span class="prob-value">35%</span>
+                                    <span class="prob-state">|010⟩</span>
+                                </div>
+                                <div class="prob-bar" data-state="011" style="height: 25%">
+                                    <span class="prob-value">25%</span>
+                                    <span class="prob-state">|011⟩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algorithms Showcase -->
+    <section class="quantum-algorithms" id="algorithms">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Quantum <span class="title-accent">Algorithms</span>
+                </h2>
+                <p class="section-subtitle">Pre-built quantum algorithms for real-world applications</p>
+            </div>
+            
+            <div class="algorithms-grid">
+                <div class="algorithm-card">
+                    <div class="algorithm-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Grover's Search</h3>
+                    <p>Quadratic speedup for unstructured search problems</p>
+                    <div class="algorithm-tags">
+                        <span class="tag">O(√N)</span>
+                        <span class="tag">Search</span>
+                    </div>
+                    <button class="btn-algorithm">
+                        <i class="fas fa-code"></i>
+                        Implement
+                    </button>
+                </div>
+                
+                <div class="algorithm-card">
+                    <div class="algorithm-icon">
+                        <i class="fas fa-sort-amount-up"></i>
+                    </div>
+                    <h3>Shor's Algorithm</h3>
+                    <p>Exponential speedup for integer factorization</p>
+                    <div class="algorithm-tags">
+                        <span class="tag">O((log N)³)</span>
+                        <span class="tag">Crypto</span>
+                    </div>
+                    <button class="btn-algorithm">
+                        <i class="fas fa-code"></i>
+                        Implement
+                    </button>
+                </div>
+                
+                <div class="algorithm-card">
+                    <div class="algorithm-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>VQE</h3>
+                    <p>Variational Quantum Eigensolver for quantum chemistry</p>
+                    <div class="algorithm-tags">
+                        <span class="tag">Hybrid</span>
+                        <span class="tag">Chemistry</span>
+                    </div>
+                    <button class="btn-algorithm">
+                        <i class="fas fa-code"></i>
+                        Implement
+                    </button>
+                </div>
+                
+                <div class="algorithm-card">
+                    <div class="algorithm-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>QML</h3>
+                    <p>Quantum Machine Learning algorithms</p>
+                    <div class="algorithm-tags">
+                        <span class="tag">ML</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <button class="btn-algorithm">
+                        <i class="fas fa-code"></i>
+                        Implement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Learning -->
+    <section class="quantum-learn" id="learn">
+        <div class="container">
+            <div class="learn-content">
+                <div class="learn-text">
+                    <h2>Learn <span class="text-gradient">Quantum</span></h2>
+                    <p>Master quantum computing with our interactive courses, tutorials, and hands-on labs.</p>
+                    
+                    <div class="learning-path">
+                        <div class="path-step">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h4>Quantum Basics</h4>
+                                <p>Qubits, superposition, and entanglement</p>
+                            </div>
+                        </div>
+                        
+                        <div class="path-step">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h4>Quantum Circuits</h4>
+                                <p>Building and simulating quantum circuits</p>
+                            </div>
+                        </div>
+                        
+                        <div class="path-step">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h4>Quantum Algorithms</h4>
+                                <p>Implementing advanced quantum algorithms</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary">
+                        <i class="fas fa-graduation-cap"></i>
+                        Start Learning Path
+                    </button>
+                </div>
+                
+                <div class="learn-visual">
+                    <div class="quantum-animation">
+                        <div class="qubit-visualization">
+                            <div class="bloch-sphere">
+                                <div class="sphere">
+                                    <div class="state-vector"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="quantum-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Quantum Leap?</h2>
+                <p>Join thousands of researchers, developers, and enterprises exploring the quantum frontier.</p>
+                
+                <div class="cta-actions">
+                    <button class="btn-primary quantum-glow">
+                        <i class="fas fa-rocket"></i>
+                        Start Free Trial
+                    </button>
+                    <button class="btn-outline">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Demo
+                    </button>
+                </div>
+                
+                <div class="trusted-by">
+                    <span>Trusted by quantum pioneers at</span>
+                    <div class="logos">
+                        <div class="logo">IBM</div>
+                        <div class="logo">GOOGLE</div>
+                        <div class="logo">MICROSOFT</div>
+                        <div class="logo">NASA</div>
+                        <div class="logo">CERN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="quantum-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="quantum-logo">
+                        <div class="logo-icon">⚛</div>
+                        <div class="logo-text">
+                            <span class="logo-primary">QUANTUM</span>
+                            <span class="logo-accent">SHIFT</span>
+                        </div>
+                    </a>
+                    <p>Pushing the boundaries of quantum computation since 2024.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="#">Quantum Simulator</a>
+                    <a href="#">Algorithm Library</a>
+                    <a href="#">Quantum API</a>
+                    <a href="#">Documentation</a>
+                </div>
+                
+                <div 
